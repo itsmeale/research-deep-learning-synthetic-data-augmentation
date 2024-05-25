@@ -1,0 +1,93 @@
+\chapter{Processo de Revisão Sistemática}
+
+Com o objetivo de identificar na literatura os métodos utilizados para avaliação de conjuntos de dados tabulares sintéticos (CDTS), foi conduzida uma revisão sistemática cuja população são estudos que implementam redes adversárias geradoras (RAGs) para geração de CDTS e utilizam ou proponham métodos de avaliação quantitativos sobre a qualidade dos dados sintéticos.
+Espera-se por meio desta revisão sistemática obter uma comparação quantitativa sobre os métodos e conjuntos de dados de referência mais utilizados para avaliar RAGs que são estado da arte na produção de dados sintéticos, trazendo uma visão abrangente sobre o padrão-ouro e possíveis lacunas na avaliação destes modelos.
+
+\section{Objetivo}
+
+Identificar e analisar os métodos e conjuntos de dados utilizados para avaliar um conjunto de dados sintéticos (CDS) produzido por RAGs.
+
+\section{Questões de pesquisa}
+\label{questions}
+\begin{itemize}
+    \item QP1: Quais são as métricas utilizadas para avaliar a qualidade de um CDS tabular?
+    \item QP2: Quais são os conjuntos de dados de referência na avaliação das RAGs?
+    \item QP3: Em especial para variáveis categóricas desbalanceadas, quais são as técnicas de avaliação de diversidade empregadas?
+\end{itemize}
+
+
+\section{Seleção de fontes}
+Foram selecionadas bases de dados científicas da área, repositórios de teses ou dissertações e artigos publicados em congressos.
+
+\label{sources}
+\begin{itemize}
+    \item Scopus \footnote{\url{https://www.scopus.com}}
+    \item Engineering Village \footnote{\url{https://www.engineeringvillage.com/}}
+    \item Science Direct \footnote{\url{https://www.sciencedirect.com/}}
+    \item Biblioteca digital IEEE\footnote{\url{https://ieeexplore.ieee.org/}}
+    \item Biblioteca digital ACM \footnote{\url{https://dl.acm.org/}}
+    \item NeurIPS \footnote{\url{https://proceedings.neurips.cc/}}
+\end{itemize}
+
+\section{Palavras-chaves}
+``\textit{generative adversarial network}'' relacionada com os termos \textit{tabular}, \textit{synthetic}, \textit{data}
+
+\section{Critérios de inclusão e exclusão dos trabalhos}
+\label{criteria}
+\subsection{Critérios de inclusão}
+\begin{itemize}
+    \item I1: Serão incluídos trabalhos publicados em bases de dados científicas, repositórios de teses e dissertações ou congressos.
+    \item I2: Serão incluídos trabalhos publicados a partir de 2017.
+    \item I3: Serão incluídos trabalhos que abordem técnicas de avaliação de conjuntos de dados sintéticos tabulares produzidos por redes adversárias geradoras.
+\end{itemize}
+
+\subsection{Critérios de exclusão}
+\begin{itemize}
+    \item E1: Trabalhos que não apresentem técnicas de avaliação dos conjuntos de dados produzidos pelas RAGs.
+    \item E2: Trabalhos que utilizem de maneira exclusiva bases de dados privadas.
+    \item E3: Trabalhos fora do escopo de bases de dados tabulares como geração de imagens ou texto.
+    \item E4: Trabalhos com objetivo de gerar séries temporais sintéticas.
+    \item E5: Revisões sistemáticas anteriores.
+    \item E6: Trabalhos que não utilizam RAGs
+\end{itemize}
+
+
+\section{Critérios de qualidade dos estudos primários}
+
+Os trabalhos listados deverão estar publicados em revistas ou congressos com revisão por pares. Além da revisão por pares, os trabalhos serão classificados de acordo com mais três critérios que são a existência de proposta e implementação de métricas de privacidade, utilidade estatística e diversidade aplicadas a dados tabulares. Para cada um dos critérios será atribuído um ponto, os artigos com as maiores pontuações serão considerados mais qualificados e prioritários para responder as perguntas da RS.
+
+\section{Processo de seleção dos estudos primários}
+
+A partir das palavras chaves serão construídas \textit{strings} de busca que serão utilizadas nas bases de dados científicas listadas no item \ref{sources} para recuperar os trabalhos de interesse. Seguindo os critérios de inclusão e exclusão estabelecidos no item \ref{criteria}, o resumo dos trabalhos listados pelos buscadores será lido e o trabalho será selecionado caso sua relevância seja confirmada pelo revisor.
+
+\section{Estratégia de extração de informação}
+\label{extraction}
+
+Após a definição e leitura dos trabalhos selecionados, será elaborado uma síntese dos métodos de avaliação empregados. Posteriormente uma tabulação será feita contendo dados sobre os autores, data de publicação, propósito do modelo proposto, tipos de variáveis, nome da RAG, métricas de utilidade estatística, privacidade e diversidade, além dos conjuntos de dados sintetizados e os modelos de \textit{baseline}. Esta tabulação será posteriormente utilizada pelo revisor para guiar as análises e responder as perguntas do item \ref{questions} deste protocolo.
+
+\section{Sumarização dos resultados}
+
+Após a extração das informações de acordo com o item \ref{extraction}, será feita uma análise quantitativa dos trabalhos selecionados que (1) responda as perguntas da RS e (2) esclareça as lacunas ainda presentes na avaliação de conjuntos de dados sintéticos tabulares.
+
+\section{Condução parcial: Scopus}
+
+Utilizou-se na base de dados Scopus a string de busca \textit{((generative adversarial network) OR (synthetic data AND ``gen*'')) AND ``tabular''} para os campos de título, resumo e palavras-chave dos artigos. Como filtro adicional, buscou-se apenas por artigos publicados a partir de 2017 para contemplar o critério de inclusão da RS. Inicialmente 93 artigos foram recuperados pelo motor de busca, após a revisão dos critérios de inclusão e exclusão, 50 foram selecionados para a extração de informações úteis para responder as questões de pesquisa desta RS. Os artigos e critérios de inclusão e exclusão aplicados a cada um estão elencados nas tabelas \ref{tab:rstab1}, \ref{tab:rstab2} e \ref{tab:rstab3} do apêndice \ref{appendix_articles}. A tabela \ref{tab:dataextraction} ilustra um recorte dos dados extraídos dos artigos que serão utilizados posteriormente para a análise dos métodos mais frequentes encontrados na literatura.
+
+\begin{table}[h]
+    \centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+Publicação &                                                           Bases de dados &                                                                   Métricas de similaridade &                             Métricas de privacidade & Métricas de diversidade \\
+\midrule
+\citeonline{69c5236d-d571-493c-bb3c-c023a20cd5ef} & \makecell{Adult \\ Census \\ Kaggle News \\ Kaggle Credit} & \makecell{Likelihood Fitness \\ Machine Learning Efficacy} & \makecell{N/A} & \makecell{N/A} \\
+\citeonline{dc5ecd96-7c07-484e-8932-f332a8e89022} & \makecell{Adult \\ Lawschool \\ Compas} & \makecell{Machine Learning Efficacy \\ ECDF} & \makecell{Membership Collisions \\ Precision/Recall} & \makecell{N/A} \\
+\citeonline{31fc7574-1be7-4255-8e03-e883cc3b47c6} & \makecell{Adult \\ MNIST \\ Intrusion \\ CovType \\ News} & \makecell{CDF \\ Scatter plot \\ Machine Learning Efficacy} & \makecell{N/A} & \makecell{N/A} \\
+\citeonline{2bc3b1d7-8f5b-4266-8a7c-57645151d7dd} & \makecell{IEEE 39-bus data \\ synthesis (Matpower \& PSAT)} & \makecell{KL Divergence \\ JS Divergence \\ Wassertein distance \\ Machine Learning Efficacy} & \makecell{N/A} & \makecell{N/A} \\
+\citeonline{079a1682-f84d-4ab4-a6b6-69b9503e7565} & \makecell{Germany \\ HomeEquity \\ Kaggle \\ P2P \\ PAKDD \\ Taiwan \\ Thomas} & \makecell{Machine Learning Efficacy} & \makecell{N/A} & \makecell{N/A} \\
+\citeonline{b9608286-904e-4f60-ad15-771e60cc12f7} & \makecell{Adult \\ Census \\ CoverType \\ Credit \\ Intrusion \\ News} & \makecell{Likelihood Fitness \\ Machine Learning Efficacy} & \makecell{N/A} & \makecell{N/A} \\
+\bottomrule
+\end{tabular}}
+\label{tab:dataextraction}
+\caption{Exemplo de extração de dados dos artigos selecionados. Fonte: Autoria Própria.}
+\end{table}

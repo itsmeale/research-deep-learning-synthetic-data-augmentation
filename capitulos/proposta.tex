@@ -1,0 +1,220 @@
+\chapter{Proposta de pesquisa}
+
+\section{Tema}
+
+As redes neurais artificiais (RNA) compõem um novo paradigma para geração de dados sintéticos como as \textit{generative adversarial networks} (GANs). Esses modelos computacionais têm a capacidade de produzir conjuntos de dados sintéticos a partir de imagens, séries temporais e dados tabulares, que podem conter diversos tipos de variáveis sejam elas contínuas, discretas ou categóricas. Apesar de já existirem técnicas estatísticas para geração de dados sintéticos como aquelas baseadas em redes bayesianas, as GANs têm se destacado devido aos seus resultados, que demonstram melhores métricas de similaridade estatística e eficácia de aprendizado de máquina \cite{xu2019}.
+
+Trabalhos mais recentes na área de pesquisa da geração de dados sintéticos têm proposto novas técnicas, como os modelos de difusão estável, capazes de alcançar desempenhos superiores às GANs em termos de eficácia de aprendizado de máquina, como observado em \citeonline{diffusion-beats-gan}.
+
+O principal desafio desses modelos é assegurar um bom equilíbrio entre utilidade estatística e privacidade como observado em \citeonline{wang2021}. A principal aplicação desses modelos envolve a utilização de conjuntos de dados sintéticos para o desenvolvimento de análises estatísticas e modelos computacionais, mas com garantias de que os dados reais estejam protegidos, por exemplo, contra \textit{Linkage Attacks}, técnica na qual tenta-se inferir atributos sensíveis de observações reais a partir de modelos computacionais treinados com dados sintéticos.
+
+
+\section{Motivação}
+
+Os dados são um insumo fundamental para o desenvolvimento da pesquisa científica e da tecnologia na indústria. Neste contexto, os modelos generativos para a construção de conjuntos de dados sintéticos podem ser potenciais catalisadores de inovação, uma vez que por meio de conjuntos de dados sintéticos pode-se explorar a construção de novas tecnologias que exigem dados sensíveis para seu desenvolvimento, como aplicações da área financeira, como análise de risco de crédito, e na área de saúde, tal como modelos de inferência de condições crônicas e determinação de diagnósticos de exames de imagens \cite{review2022}.
+
+Sob a óptica científica, além de se beneficiar do acesso a mais informações, há também um ganho na reprodutibilidade dos experimentos, já que mais conjuntos de dados podem ser compartilhados junto aos resultados experimentais das análises, mesmo aqueles que possuam características sensíveis.
+
+
+\section{Lacuna}
+
+Apesar dos resultados promissores dos modelos generativos em termos de desempenho de aprendizagem de máquina, a literatura atual carece de métodos de avaliação que explorem a interpretabilidade de modelos treinados com dados sintéticos. Esta lacuna pode comprometer a seleção de modelos baseados em dados sintéticos, pois não investiga a multiplicidade de bons modelos que podem levar ao efeito \textit{Rashomon}, em que diferentes modelos apresentam o mesmo desempenho, mas aprendem características distintas do problema, acarretando assim problemas de generalização por sub-espeficicação como já observado em \citeonline{modelling-two-cultures} e \citeonline{underspecification}.
+
+
+\section{Questão de pesquisa}
+
+Dado o contexto introduzido, este trabalho tem por objetivo responder a seguinte questão de pesquisa: Modelos de classificação treinados em conjuntos de imagens reais e sintéticas possuem desempenho em conjuntos de testes independentes e identicamente distribuídos (i.i.d.) e aprendem os mesmos padrões para a resolução do problema?
+
+Esta questão de pesquisa será respondida por meio da proposição e validação de um método abrangente de avaliação que permita avaliar os modelos em conjuntos de teste i.i.d. e aplicar outras medidas de interpretabilidade que possibilitem a compreensão das relações aprendidas pelos modelos submetidos ao método.
+
+Espera-se que o método proposto seja capaz de avaliar a capacidade de generalização dos modelo, contribuindo também para um melhor entendimento das características relevantes identificadas pelos modelos para a solução dos problemas.
+
+\subsection{Justificativa}
+
+A resposta para a questão de pesquisa deste trabalho contribui para um avanço no estabelecimento de um \textit{common task framework}\cite{ctf} mais robusto que possibilita identificar falhas de generalização e especificação em modelos treinados em dados sintéticos. Deste modo, ao estabelecer um método mais abrangente de avaliação, ganha-se riqueza na interpretação da performance, adicionando informações que servem como guia para trabalhos futuros de melhorias nos modelos de geração de imagens já existentes.
+
+\section{Objetivo}
+O objetivo deste trabalho é propor e desenvolver um \textit{framework} para avaliação do desempenho de modelos computacionais treinados em conjuntos de dados sintéticos, levando em consideração métricas e conjuntos de dados padronizados, possibilitando que modelos treinados com conjuntos de dados reais e sintéticos - provenientes de diferentes modelos de geração de imagens - possam ser avaliados sob a luz de métricas que possibilitem a detecção de falhas de generalização e especificação.
+
+
+\section{Metodologia}
+
+Este trabalho se concentra na área de interpretabilidade de modelos de aprendizagem de máquina construídos a partir de imagens sintéticas geradas por \textit{generative adversarial networks} (GANs) e \textit{diffusion models}. Por meio de técnicas padrão-ouro de avaliação de modelos de classificação e métodos de interpretabilidade aplicados a modelos de classificação de imagens, será proposto e implementado uma suíte de avaliação robusta e abrangente. Com base na revisão sistemática, diferentes modelos de geração de imagens sintéticas serão selecionados e implementados para a geração de conjuntos de imagens sintéticas a partir de conjuntos de dados pré definidos, assim, modelos de classificação com performance estado-da-arte serão treinados e avaliados pelo framework proposto neste trabalho em diferentes cenários de composições de conjuntos de dados com imagens reais e sintéticas.
+
+\begin{enumerate}
+    \item \label{a0} \textbf{Redação da dissertação}: escrita dos componentes textuais da dissertação.
+
+    \item \label{a1} \textbf{Seleção e implementação dos modelos de geração de imagens}: por meio dos dados levantados na revisão sistemática definiremos os modelos a serem implementados utilizando a linguagem Python.
+    
+    \item \label{a2} \textbf{Coleta de conjuntos de dados}: serão selecionados e coletados conjuntos de dados com diferentes características como número de classes representadas e balanceamentos de classes para a avaliação dos resultados em diferentes cenários de treinamentos.
+    
+    \item \label{a3} \textbf{Geração dos conjuntos de imagens sintéticas}: A partir dos modelos de geração implementados serão gerados novos conjuntos de dados com imagens sintéticas.
+    
+    \item \label{a4} \textbf{Seleção e implementação dos modelos classificadores}: Implementação e treinamento dos modelos de classificação em conjuntos de dados com diferentes proporções de imagens geradas sinteticamente. 
+
+    \item \label{a5} \textbf{Proposta e implementação do framework de avaliação}: Definição e implementação de métricas padrão-ouro na literatura para avaliação de modelos de classificação e interpretabilidade.
+    
+    \item \label{a6} \textbf{Aplicação do framework}: Submissão dos resultados dos modelos ao framework de avaliação.
+    
+    \item \label{a7} \textbf{Avaliação dos resultados}: Discussão em detalhes dos resultados obtidos na atividade \ref{a6}.
+    
+    \item \label{a8} \textbf{Divulgação}: Submissão de artigo para revista da área.
+\end{enumerate}
+
+% %% ===============
+
+% %% ===============
+\newpage
+% \subsection{Cronograma}
+
+% \hskip-1.2cm
+% \begin{table}[h]
+%     \centering
+%     \begin{tabular}{|c|c|l|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+%         \hline
+%         \multicolumn{2}{|c|}{Atividade} & \multicolumn{12}{|c|}{2023} \\
+%         \hline
+%         Num. & Descrição & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\\
+%         \hline
+        
+%         \ref{a0} & Redação da dissertação & X & X & X &X&X&X&X&X&X&X&X&X\\
+%         \hline
+        
+%         \ref{a1} & Implementação RAGs & X & X &&&&&&&&&&\\
+%         \hline
+        
+%         \ref{a2} & Coleta de dados && X &&&&&&&&&&\\
+%         \hline
+        
+%         \ref{a3} & Construção de dados &&X &&&&&&&&&&\\
+%         \hline
+        
+%         \ref{a4} & \makecell{Implementação de métricas \\ de similaridade} &&& X & X &&&&&&&&\\
+%         \hline
+        
+%         \ref{a5} & Testes de eficácia de AM &&&& X & X &&&&&&& \\
+%         \hline
+        
+%         \ref{a6} & \makecell{Implementação de métricas \\ de privacidade} &&&&& X & X &&&&&& \\
+%         \hline
+        
+%         \ref{a61} & \makecell{Proposta e implementação\\ da métrica universal} &&&&&& X & X &&&&& \\
+%         \hline
+        
+%         \ref{a7} & \makecell{Avaliação das RAGs} & &&&&& X & X & X &&&&\\
+%         \hline
+        
+%         \ref{a8} & \makecell{Avaliação dos resultados} & &&&&&&& X & X &&&\\
+%         \hline
+        
+%         \ref{a9} & \makecell{Divulgação} & &&&&&&&&&X&X&X\\
+%         \hline
+%     \end{tabular}
+%     \caption{Cronograma do projeto. Fonte: Autoria própria.}
+%     \label{tab:cronograma}
+% \end{table}
+
+\subsection{Cronograma}
+
+\hskip-1.2cm
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|l|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{Atividade} &
+        \multicolumn{1}{|c|}{2023} &
+        \multicolumn{12}{|c|}{2024}
+        \\
+        \hline
+        Num. & Descrição & 12 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\\
+        \hline
+
+        0 & \makecell{Resultados \\ preliminares} &X&X&X&&&&&&&&&&\\
+        \hline
+        
+        \ref{a0} & Redação da dissertação & X & X & X &X&X&X&X&X&X&X&X&X&X\\
+        \hline
+        
+        \ref{a1} & \makecell{Implementação dos modelos \\ de geração de imagens} &&&&&&X&&&&&&&\\
+        \hline
+        
+        \ref{a2} & \makecell{Coleta de conjuntos de dados} &&&&&&&X&&&&&&\\
+        \hline
+        
+        \ref{a3} & \makecell{Geração dos conjuntos \\de imagens sintéticas} &&&&&&&X&&&&&&\\
+        \hline
+        
+        \ref{a4} & \makecell{Implementação dos modelos \\ classificadores} &&&&&&&&X&&&&&\\
+        \hline
+        
+        \ref{a5} & \makecell{Proposta e implementação do\\ \textit{framework} de avaliação} &&&&&&&&X&X&&&& \\
+        \hline
+        
+        \ref{a6} & \makecell{Aplicação do \textit{framework}} &&&&&&&&&X&X&&& \\
+        \hline
+        
+        \ref{a7} & \makecell{Avaliação dos resultados} &&&&&&&&&&&X&&\\
+        \hline
+        
+        \ref{a8} & \makecell{Divulgação} & &&&&&&&&&&&X&X\\
+        \hline
+    \end{tabular}
+    \caption{Cronograma do projeto. Fonte: Autoria própria. Os resultados preliminares consistem na aplicação de uma versão simplificada do \textit{framework} utilizando um modelo de difusão estável e uma rede convolucional simplificada.}
+    \label{tab:cronograma}
+\end{table}
+
+% \subsection{Avaliação}
+
+% \subsubsection{Conjuntos de dados}
+
+% Os conjuntos de dados de referência utilizados pelo método de avaliação serão \textit{ADULT}, \textit{Breast Cancer} e \textit{Credit Default}. Além dos conjuntos de referência as RAGs serão avaliadas em \textit{datasets} artificiais com variáveis que possuem diferentes tipos de correlação e níveis de balanceamento, no caso das variáveis categóricas. Deste modo, podemos aferir o desempenho dos modelos em múltiplos cenários.
+
+% \subsubsection{Baseline}
+
+% Pode-se estabelecer um \textit{baseline} com os métodos propostos em \citeonline{evaluator2019} e \citeonline{sdv}. No primeiro trabalho é proposta uma métrica única que é baseada na média entre diferentes métricas de similaridade. Já no segundo trabalho temos a implementação de um conjunto diferente de métricas que contemplam o trade-off utilidade-privacidade, mas não inclui nenhuma medida de resumo. Em ambos os trabalhos não se propõe nenhuma métrica universal que una similaridade e privacidade, além de não existir também uma métrica que contemple a diversidade dos conjuntos de dados.
+
+% \begin{table}[h]
+%     \centering
+%     \begin{tabular}{|c|c|c|c|}
+    
+%     \hline
+%     & \makecell{\textit{table evaluator} \\ \citeonline{evaluator2019}} & \makecell{\textit{SDGym} \\ \citeonline{sdv}} & \textit{GANEvaluator} \\
+%     \hline
+%     \makecell{Modelos built-in} &&X&X \\
+%     \hline
+%     \makecell{Datasets built-in} &&X&X \\
+%     \hline
+%     \makecell{Similaridade} &X&X&X \\
+%     \hline
+%     \makecell{Privacidade} &X&X&X \\
+%     \hline
+%     \makecell{Processamento \\ Distribuído} &&X&X \\
+%     \hline
+%     \makecell{Avaliação visual} &X&&X \\
+%     \hline
+%     \makecell{Métrica universal} &X&&X \\
+%     \hline
+%     \makecell{Diversidade} &&&X \\
+%     \hline
+    
+%     \end{tabular}
+%     \caption{Requisitos implementados e não implementados nos métodos de referência em comparação com o framework proposto. Fonte: Autoria própria.}
+%     \label{tab:baseline}
+% \end{table}
+
+% \subsubsection{Avaliação empírica}
+
+% Com o objetivo de demonstrar a utilidade do método de avaliação proposto para aferir o desempenho em termos de similaridade e privacidade, diferentes modelos de geração de dados sintéticos (para tipos variáveis mistos) serão treinados com os conjuntos de dados supracitados, nenhum tipo de otimização de hiper-parâmetros será feito, serão utilizados os valores de parâmetros padrão encontrados na literatura. Após a etapa de treinamento, cada modelo ira gerar um conjunto de dados sintético com o mesmo número de amostras do conjunto de dados real. Finalizada a sintetização dos dados, os conjuntos reais e artificiais serão submetidos aos métodos computacionais de avaliação de dados sintéticos. Por fim, os resultados da avaliação do método proposto serão demonstrados e discutidos.
+
+\section{Contribuições}
+O desenvolvimento deste projeto contribui para o avanço na metodologia de desenvolvimento e avaliação de modelos de geração de imagens e modelos de classificação treinados em conjuntos de dados sintéticos. Especificamente serão produtos deste trabalho:
+
+\begin{enumerate}
+    \item Método de avaliação padronizado contemplando o padrão-ouro atual e novas medidas de interpretabilidade relevantes para detectar problemas de sub-especificação.
+    \item Biblioteca \textit{open source} na linguagem de programação Python com o método proposto implementado.
+\end{enumerate}
+
+
+\section{Escopo}
+
+O escopo desta pesquisa se limita a avaliação de modelos de classificação treinados em conjuntos de imagens sintéticas geradas por GANs e \textit{diffusion models}. O presente projeto não inclui a avaliação da qualidade de séries temporais, conjuntos de dados relacionais ou dados tabulares sintéticos. Os métodos de geração e avaliação envolvidos neste trabalho não se aplicam a dados tabulares estruturados.
