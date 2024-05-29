@@ -94,8 +94,11 @@
 % Pacotes para construção modularizada do documento
 % ---
 \usepackage{import}
-
 \usepackage{multirow}
+\usepackage{rotating}
+\usepackage{amsmath}
+
+\renewcommand{\arraystretch}{1.5}
 
 % --- 
 % CONFIGURAÇÕES DE PACOTES
@@ -324,8 +327,10 @@ Dissertação apresentada à Escola de Artes, Ciências e Humanidades da Univers
 %
 %-------------------------------------------------------------------------
 
-% \input{capitulos/revisao_sistematica}
-\input{capitulos/revisao_bibliografica}
+% \input{capitulos/introdução}
+\input{capitulos/conceitos_fundamentais}
+% \input{capitulos/revisao_bibliografica}
+% \input{capitulos/estudo_piloto}
 % \input{capitulos/proposta}
 
 \bibliography{referencias/referencias}
