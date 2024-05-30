@@ -1,10 +1,12 @@
 \chapter{Conceitos Fundamentais}
+\label{capitulo:conceitos-fundamentais}
 
 Este capítulo apresenta os conceitos fundamentais que servem de base para o desenvolvimento da presente pesquisa. As primeiras seções descrevem os fundamentos do aprendizado de máquina e visão computacional, as seções seguintes aprofundam os conceitos amplamente utilizados na pesquisa sobre redes neurais e a geração de dados sintéticos, por fim a última seção trás luz sobre a explicabilidade de modelos caixa preta e se aprofunda nas técnicas importantes para a avaliação de modelos de imagens.
 
 
 
 \section{Aprendizado de máquina}
+\label{secao:aprendizado-de-maquina}
 
 A abordagem de aprendizagem de máquina (do inglês \textit{machine learning}), é fundamental para a resolução de diversos problemas por meio do reconhecimento de padrões \cite{bishopPatternRecognitionMachine2006}. 
 Em essência o objetivo do reconhecimento de padrões está na descoberta automática de relações entre as diferentes características de um determinado fenômeno, de modo que essas relações possam ser utilizadas para a tomada decisão em diversos tipos de atividades como: previsão do tempo, diagnósticos médicos, determinação do preço de um ativo e o reconhecimento de indivíduos.
@@ -58,7 +60,7 @@ Desta matriz pode-se derivar diversas métricas que resumem a qualidade do model
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Matriz de confusão: a matriz de confusão pode ser aplicada a problemas de classificação binário ou multi-classe, por meio desta matriz, pode-se derivar diversas métricas que auxiliam a compreensão da performance do modelo. }
+	\caption[Matriz de confusão]{Matriz de confusão: a matriz de confusão pode ser aplicada a problemas de classificação binário ou multi-classe, por meio desta matriz, pode-se derivar diversas métricas que auxiliam a compreensão da performance do modelo. }
 		\includegraphics[scale=.25]{imagens/matriz-de-confusao.png}
 	\label{fig:matriz-de-confusao}
   \source{Alexandre Farias, 2024}
@@ -104,7 +106,7 @@ A curva AUCROC é sensível ao desbalanceamento do conjunto de dados, pois com p
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Exemplo de curva ROC: a linha pontilhada representa um modelo que classifica as instâncias aleatoriamente, a linha contínua representa um classificador que possui uma performance melhor que o \textit{baseline} aleatório.}
+	\caption[Curva ROC]{Curva ROC: a linha pontilhada representa um modelo que classifica as instâncias aleatoriamente, a linha contínua representa um classificador que possui uma performance melhor que o \textit{baseline} aleatório.}
 		\includegraphics[scale=.20]{imagens/auroc.png}
 	\label{fig:aucroc}
   \source{Alexandre Farias, 2024}
@@ -117,7 +119,7 @@ A utilização desta curva é recomendada para avaliar modelos treinados em conj
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Exemplo de curva PR: a linha pontilhada representa a performance teórica de um classificador aleatório que serve como \textit{baseline}, já linha contínua representa a performance de um classificador que possui uma área sob a curva maior, sendo consequentemente melhor que o \textit{baseline}}
+	\caption[Curva PR]{Curva PR: a linha pontilhada representa a performance teórica de um classificador aleatório que serve como \textit{baseline}, já linha contínua representa a performance de um classificador que possui uma área sob a curva maior, sendo consequentemente melhor que o \textit{baseline}}
 		\includegraphics[scale=.20]{imagens/prcurve.png}
 	\label{fig:prcurve}
   \source{Alexandre Farias, 2024}
@@ -148,7 +150,7 @@ Como apresentado na figura \ref{fig:perceptron} (a), os neurônios realizam uma 
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Arquitetura de um neurônio e da rede multilayer perceptron: (a) Um neurônio artificial recebe dados em sua entrada e realiza uma combinação linear com base em seus pesos sinápticos, em sequência a função de ativação é aplicada a este resultado. (b) A rede MLP é caracterizada pela utilização de uma ou mais camadas ocultas com múltiplos neurônios.}
+	\caption[Arquitetura de um neurônio e da rede multilayer perceptron]{Arquitetura de um neurônio e da rede multilayer perceptron: (a) Um neurônio artificial recebe dados em sua entrada e realiza uma combinação linear com base em seus pesos sinápticos, em sequência a função de ativação é aplicada a este resultado. (b) A rede MLP é caracterizada pela utilização de uma ou mais camadas ocultas com múltiplos neurônios.}
 		\includegraphics[scale=.25]{imagens/perceptron.png}
 	\label{fig:perceptron}
   \source{Alexandre Farias, 2024}
@@ -176,7 +178,7 @@ De maneira simples, podemos pensar em uma rede convolucional como uma arquitetur
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Arquitetura de uma rede neural convolucional: As redes neurais convolucionais podem ser dividas em dois grandes blocos, sendo (a) o bloco de extração de características de redimensionamento e (b) o bloco completamente conectado responsável pela geração das saídas do modelo.}
+	\caption[Arquitetura de uma rede neural convolucional]{Arquitetura de uma rede neural convolucional: As redes neurais convolucionais podem ser dividas em dois grandes blocos, sendo (a) o bloco de extração de características de redimensionamento e (b) o bloco completamente conectado responsável pela geração das saídas do modelo.}
 		\includegraphics[scale=.23]{imagens/cnn.png}
 	\label{fig:cnn}
   \source{Alexandre Farias, 2024}
@@ -201,7 +203,7 @@ As GANs são modelos que utilizam as redes neurais artificiais para a geração 
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Diagrama de arquitetura de GAN: a rede discriminadora recebe um ruído proveniente de um espaço latente e a partir do mesmo sintetiza informações, por sua vez, a rede discriminadora recebe dados reais e sintetizados e possui como objetivo determinar a probabilidade de uma entrada ser real ou sintética.}
+	\caption[Arquitetura de uma GAN]{Arquitetura de uma GAN: a rede discriminadora recebe um ruído proveniente de um espaço latente e a partir do mesmo sintetiza informações, por sua vez, a rede discriminadora recebe dados reais e sintetizados e possui como objetivo determinar a probabilidade de uma entrada ser real ou sintética.}
 		\includegraphics[scale=.25]{imagens/gan.png}
 	\label{fig:gan}
   \source{Alexandre Farias, 2024}
@@ -217,7 +219,7 @@ Os modelos de difusão (do inglês \textit{difussion models}, DM) são uma class
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Representação do processo de aprendizado de um modelo de difusão: em uma primeira etapa, o modelo adiciona ruído ao dado original até que ele seja destruído, já na segunda etapa por meio de uma função score o modelo gradativamente remove o ruído até obter dados verossímeis.}
+	\caption[Representação do processo de aprendizado de um modelo de difusão]{Representação do processo de aprendizado de um modelo de difusão: em uma primeira etapa, o modelo adiciona ruído ao dado original até que ele seja destruído, já na segunda etapa por meio de uma função score o modelo gradativamente remove o ruído até obter dados verossímeis.}
 		\includegraphics[scale=.28]{imagens/difussion-model.png}
 	\label{fig:diffusion-model}
   \source{Adaptado de \citeonline{yangDiffusionModelsComprehensive2023}.}
@@ -229,3 +231,18 @@ Estes modelos, fazem parte do paradigma de modelos generativos probabilísticos,
 
 \section{Explicabilidade de modelos caixa preta}
 
+A utilização de algoritmos para auxiliar a tomada de decisão é uma discussão que há muito tempo vem sendo desenvolvida, recentemente com os grandes avanços tecnológicos no desenvolvimento de modelos computacionais, principalmente modelos caixa-preta, a discussão se tornou ainda mais relevante.
+
+Os modelos caixa-preta, são algoritmos computacionais que não possuem transparência ou uma camada interpretável que permita uma pessoa compreender com clareza o porquê de suas previsões. Idealmente, para que estes modelos pudessem ser aplicados em nossa sociedade, ferramentas de auditoria e validação deveriam ser empregadas para a minimização de riscos, neste contexto que emerge a discussão sobre a explicabilidade na área de inteligência artificial.
+
+\begin{figure}[htbp]
+	\centering
+	\caption[Representação do método de mapas de atenção aplicados a uma rede neural]{Representação do método de mapas de atenção aplicados a uma rede neural: Após a classificação do modelo, além das probabilidades dadas na saída, tem-se também o impacto das diferentes regiões da imagem para o resultado da classificação.}
+		\includegraphics[scale=.28]{imagens/mapa-de-atencao.png}
+	\label{fig:mapa-de-atencao}
+  \source{Alexandre Farias, 2024.}
+\end{figure}
+
+\citeonline{millerExplanationArtificialIntelligence2019} cita em seu trabalho que existem diferentes motivações para que as pessoas busquem por explicações, como a curiosidade, o aprendizado e a auditoria. Levando em consideração estas motivações a aplicação de técnicas de explicabilidade é útil em diversos aspectos como o aprendizado para a construção de modelos melhores e também a validação de que modelos empregados possam ser auditados e respeitem os critérios de justiça que são definidos pela sociedade.
+
+Com o avanço da pesquisa na área de explicabilidade algorítmica, diversas técnicas foram propostas para viabilizar a abertura da caixa-preta de modelos mais complexos, como as redes neurais artificiais, como: \textit{Shapley Additive Explanations} (SHAP)\cite{lundbergUnifiedApproachInterpreting2017}, \textit{Local Interpretable Model-Agnostic Explanations} (LIME)\cite{ribeiroWhyShouldTrust2016} e os diferentes tipos de mapas de atenção aplicados a redes neurais convolucionais\cite{selvarajuGradCAMVisualExplanations2017}\cite{chattopadhayGradCAMGeneralizedGradientBased2018}\cite{banymuhammadEigenCAMVisualExplanations2021}.
