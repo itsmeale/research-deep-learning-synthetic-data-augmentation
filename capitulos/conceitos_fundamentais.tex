@@ -2,6 +2,8 @@
 
 Este capítulo apresenta os conceitos fundamentais que servem de base para o desenvolvimento da presente pesquisa. As primeiras seções descrevem os fundamentos do aprendizado de máquina e visão computacional, as seções seguintes aprofundam os conceitos amplamente utilizados na pesquisa sobre redes neurais e a geração de dados sintéticos, por fim a última seção trás luz sobre a explicabilidade de modelos caixa preta e se aprofunda nas técnicas importantes para a avaliação de modelos de imagens.
 
+
+
 \section{Aprendizado de máquina}
 
 A abordagem de aprendizagem de máquina (do inglês \textit{machine learning}), é fundamental para a resolução de diversos problemas por meio do reconhecimento de padrões \cite{bishopPatternRecognitionMachine2006}. 
@@ -103,7 +105,7 @@ A curva AUCROC é sensível ao desbalanceamento do conjunto de dados, pois com p
 \begin{figure}[htbp]
 	\centering
 	\caption{Exemplo de curva ROC: a linha pontilhada representa um modelo que classifica as instâncias aleatoriamente, a linha contínua representa um classificador que possui uma performance melhor que o \textit{baseline} aleatório.}
-		\includegraphics[scale=.25]{imagens/auroc.png}
+		\includegraphics[scale=.20]{imagens/auroc.png}
 	\label{fig:aucroc}
   \source{Alexandre Farias, 2024}
 \end{figure}
@@ -116,14 +118,23 @@ A utilização desta curva é recomendada para avaliar modelos treinados em conj
 \begin{figure}[htbp]
 	\centering
 	\caption{Exemplo de curva PR: a linha pontilhada representa a performance teórica de um classificador aleatório que serve como \textit{baseline}, já linha contínua representa a performance de um classificador que possui uma área sob a curva maior, sendo consequentemente melhor que o \textit{baseline}}
-		\includegraphics[scale=.25]{imagens/prcurve.png}
+		\includegraphics[scale=.20]{imagens/prcurve.png}
 	\label{fig:prcurve}
   \source{Alexandre Farias, 2024}
 \end{figure}
 
+
+
 \section{Visão Computacional}
 
-A visão computacional é um ramo da computação...
+A visão computacional é um ramo da computação que viabiliza por meio do processamento de imagens e da computação gráfica, diversas aplicações como: rastreamento de movimento, identificação de pessoas em imagens, detecção de defeitos em linhas de produção, detecção de alvos em imagens de satélite, suporte a tomada de decisão médica por meio da identificação de patologias, modelagem tridimensional e reconhecimento de caracteres. 
+
+O objetivo da visão computacional é descrever o mundo em imagens de modo que possamos reconstruir suas características como formas, iluminação e distribuições de cores, para isso técnicas matemáticas e computacionais são utilizadas para coletar e representar as informações obtidas do mundo real em modelos como imagens ou representações tridimensionais \cite{szeliskiComputerVisionAlgorithms2011}.
+
+A representação numérica das imagens permite que uma gama de aplicações possa ser desenvolvida, como os métodos de processamento de imagem que são de especial interesse para o presente trabalho, pois a construção de modelos capazes de classificar objetos, assim como as redes neurais artificiais, depende fundamentalmente da qualidade e quantidade das imagens obtidas sobre o objeto de interesse, para que a tarefa de reconhecimento de padrões seja bem sucedida.
+
+
+
 
 \section{Redes neurais artificiais (RNA)}
 
@@ -173,6 +184,9 @@ De maneira simples, podemos pensar em uma rede convolucional como uma arquitetur
 
 Uma das vantagens deste modelo é a sua capacidade de aprender características a partir de um campo receptivo da imagem, ou seja, cada neurônio pode sinalizar a importância de um conjunto de pixeis da imagem original, e não apenas de um único pixel, para a tarefa de classificação ou regressão que está sendo trabalhada. As redes neurais convolucionais
 
+
+
+
 \section{Geração de dados sintéticos}
 
 Os dados são um insumo fundamental para a pesquisa e desenvolvimento de modelos computacionais aplicados a diversas áreas do conhecimento. Recentemente, informações estruturadas como dados tabulares coletados em planilhas, imagens, vídeos e faixas de áudio, passaram a ser gerados sinteticamente com uma qualidade aceitável para sua aplicação em diferentes atividades \cite{dhariwalDiffusionModelsBeat2021}.
@@ -197,8 +211,6 @@ O algoritmo de aprendizado deste modelo se dá por meio de varias iterações, a
 
 A taxa de aprendizado, ou seja, a intensidade com que os pesos são ajustados, é configurada de modo que a rede geradora possa aprender em um passo mais acelerado do que a rede discriminadora, de modo que o algoritmo possa convergir para um ponto em que a rede geradora sintetize imagens tão parecidas com as reais fazendo com que a rede discriminadora não consiga distinguir tão bem as imagens que recebe em sua camada de entrada \cite{goodfellowGenerativeAdversarialNetworks2014}.
 
-
-
 \subsection{Difussion Models (DM)}
 
 Os modelos de difusão (do inglês \textit{difussion models}, DM) são uma classe de modelos geradores capazes de atingir performance estado-da-arte em diversas aplicações diferentes como a síntese de imagens, vídeos e a prototipação de novas moléculas, consequentemente sendo uma ferramenta utilizada por áreas distintas como a visão computacional, processamento de linguagem natural, modelagem de séries temporais e outras aplicações interdisciplinares \cite{yangDiffusionModelsComprehensive2023}.
@@ -215,5 +227,5 @@ Estes modelos, fazem parte do paradigma de modelos generativos probabilísticos,
 
 
 
-
 \section{Explicabilidade de modelos caixa preta}
+
