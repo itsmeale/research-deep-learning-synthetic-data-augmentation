@@ -56,7 +56,7 @@ Desta matriz pode-se derivar diversas métricas que resumem a qualidade do model
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Esquema da matriz de confusão}
+	\caption{Matriz de confusão: a matriz de confusão pode ser aplicada a problemas de classificação binário ou multi-classe, por meio desta matriz, pode-se derivar diversas métricas que auxiliam a compreensão da performance do modelo. }
 		\includegraphics[scale=.25]{imagens/matriz-de-confusao.png}
 	\label{fig:matriz-de-confusao}
   \source{Alexandre Farias, 2024}
@@ -102,7 +102,7 @@ A curva AUCROC é sensível ao desbalanceamento do conjunto de dados, pois com p
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Exemplo de curva ROC}
+	\caption{Exemplo de curva ROC: a linha pontilhada representa um modelo que classifica as instâncias aleatoriamente, a linha contínua representa um classificador que possui uma performance melhor que o \textit{baseline} aleatório.}
 		\includegraphics[scale=.25]{imagens/auroc.png}
 	\label{fig:aucroc}
   \source{Alexandre Farias, 2024}
@@ -115,7 +115,7 @@ A utilização desta curva é recomendada para avaliar modelos treinados em conj
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Exemplo de curva PR}
+	\caption{Exemplo de curva PR: a linha pontilhada representa a performance teórica de um classificador aleatório que serve como \textit{baseline}, já linha contínua representa a performance de um classificador que possui uma área sob a curva maior, sendo consequentemente melhor que o \textit{baseline}}
 		\includegraphics[scale=.25]{imagens/prcurve.png}
 	\label{fig:prcurve}
   \source{Alexandre Farias, 2024}
@@ -137,7 +137,7 @@ Como apresentado na figura \ref{fig:perceptron} (a), os neurônios realizam uma 
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Diagrama de arquitetura de um neurônio e da rede multilayer perceptron}
+	\caption{Arquitetura de um neurônio e da rede multilayer perceptron: (a) Um neurônio artificial recebe dados em sua entrada e realiza uma combinação linear com base em seus pesos sinápticos, em sequência a função de ativação é aplicada a este resultado. (b) A rede MLP é caracterizada pela utilização de uma ou mais camadas ocultas com múltiplos neurônios.}
 		\includegraphics[scale=.25]{imagens/perceptron.png}
 	\label{fig:perceptron}
   \source{Alexandre Farias, 2024}
@@ -165,7 +165,7 @@ De maneira simples, podemos pensar em uma rede convolucional como uma arquitetur
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Diagrama de arquitetura de uma rede neural convolucional}
+	\caption{Arquitetura de uma rede neural convolucional: As redes neurais convolucionais podem ser dividas em dois grandes blocos, sendo (a) o bloco de extração de características de redimensionamento e (b) o bloco completamente conectado responsável pela geração das saídas do modelo.}
 		\includegraphics[scale=.23]{imagens/cnn.png}
 	\label{fig:cnn}
   \source{Alexandre Farias, 2024}
@@ -187,7 +187,7 @@ As GANs são modelos que utilizam as redes neurais artificiais para a geração 
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Diagrama de arquitetura de uma rede neural convolucional}
+	\caption{Diagrama de arquitetura de GAN: a rede discriminadora recebe um ruído proveniente de um espaço latente e a partir do mesmo sintetiza informações, por sua vez, a rede discriminadora recebe dados reais e sintetizados e possui como objetivo determinar a probabilidade de uma entrada ser real ou sintética.}
 		\includegraphics[scale=.25]{imagens/gan.png}
 	\label{fig:gan}
   \source{Alexandre Farias, 2024}
@@ -200,5 +200,20 @@ A taxa de aprendizado, ou seja, a intensidade com que os pesos são ajustados, �
 
 
 \subsection{Difussion Models (DM)}
+
+Os modelos de difusão (do inglês \textit{difussion models}, DM) são uma classe de modelos geradores capazes de atingir performance estado-da-arte em diversas aplicações diferentes como a síntese de imagens, vídeos e a prototipação de novas moléculas, consequentemente sendo uma ferramenta utilizada por áreas distintas como a visão computacional, processamento de linguagem natural, modelagem de séries temporais e outras aplicações interdisciplinares \cite{yangDiffusionModelsComprehensive2023}.
+
+\begin{figure}[htbp]
+	\centering
+	\caption{Representação do processo de aprendizado de um modelo de difusão: em uma primeira etapa, o modelo adiciona ruído ao dado original até que ele seja destruído, já na segunda etapa por meio de uma função score o modelo gradativamente remove o ruído até obter dados verossímeis.}
+		\includegraphics[scale=.28]{imagens/difussion-model.png}
+	\label{fig:diffusion-model}
+  \source{Adaptado de \citeonline{yangDiffusionModelsComprehensive2023}.}
+\end{figure}
+
+Estes modelos, fazem parte do paradigma de modelos generativos probabilísticos, sua abordagem envolve a adição progressiva de ruído e o aprendizado da reversão do processo de adição de ruído. De modo geral, a fase de remoção de ruído é composta por diferentes etapas, cada etapa computa os gradientes de uma função score que direcionam o processo de remoção de ruído para a construção de imagens mais prováveis e menos ruidosas, assim como ilustrado na figura \ref{fig:diffusion-model}.
+
+
+
 
 \section{Explicabilidade de modelos caixa preta}
