@@ -144,14 +144,14 @@ Além das atividades programadas com base na metodologia proposta, durante a rev
 
 \subsection{Arcabouço Proposto} \label{secao:arcabouco}
 
-A figura \ref{fig:arcabouco} esquematiza de forma simples a metodologia proposta para a avaliação da questão de pesquisa definida neste trabalho.
+A figura \ref{fig:arcabouco-proposto} esquematiza de forma simples a metodologia proposta para a avaliação da questão de pesquisa definida neste trabalho.
 A partir de um banco de imagens definido previamente, dois conjuntos de dados serão derivados sendo o conjunto de treinamento e um conjunto de teste. O conjunto de treinamento real será utilizado para treinar os modelos geradores de imagens sintéticas e assim produzir um segundo conjunto de dados de treinamento sintético, além disso, também será empregado para o treinamento dos classificadores. Por fim, os conjuntos de dados de testes serão compostos apenas por imagens reais, que serão avaliadas pelos modelos classificadores.
 
 \begin{figure}[htbp]
 	\centering
-	\caption{Esquema simplificado da metodologia proposta para avaliação da hipótese}
-		\includegraphics[scale=.65]{imagens/arcabouco.png}
-	\label{fig:arcabouco}
+	\caption[Esquema da metodologia proposta para avaliação da hipótese]{Esquema da metodologia proposta para avaliação da hipótese: mantendo o modelo padrão de avaliação de eficácia de aprendizado de máquina aplicado a modelos de classificação, o arcabouço proposto adiciona uma nova camada de interpretabilidade para ajudar a validar com mais rigor a hipótese de utilidade dos dados sintéticos.}
+		\includegraphics[scale=.19]{imagens/arcabouco-proposto.png}
+	\label{fig:arcabouco-proposto}
   \source{Alexandre Farias, 2024}
 \end{figure}
 
@@ -165,7 +165,7 @@ Juntamente da avaliação de eficácia de aprendizado de máquina, mapas de aten
 
 \subsubsection{Conjuntos de dados}
 
-Para aplicar a metodologia proposta serão utilizados os conjuntos de dados \textit{Chest X-Ray Images (Pneumonia)}\footnote{https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia?resource=download} e CIFAR-10\footnote{https://www.cs.toronto.edu/~kriz/cifar.html}. O Primeiro conjunto de dados contem imagens de raio-x de tórax de pulmões saudáveis e não saudáveis, o problema de aprendizado a ser resolvido será a classificação binária. Já o segundo conjunto de dados, contêm imagens de várias classes distintas, como aviões, automóveis, cães, gatos, navios e outros animais, para este conjunto de dados o objetivo será o desenvolvimento de um classificador multi-classe.
+Para aplicar a metodologia proposta serão utilizados os conjuntos de dados \textit{Chest X-Ray Images (Pneumonia)} utilizado em \citeonline{xraychestdataset} e CIFAR-10\footnote{https://www.cs.toronto.edu/~kriz/cifar.html}. O Primeiro conjunto de dados contem imagens de raio-x de tórax de pulmões saudáveis e não saudáveis, o problema de aprendizado a ser resolvido será a classificação binária. Já o segundo conjunto de dados, contêm imagens de várias classes distintas, como aviões, automóveis, cães, gatos, navios e outros animais, para este conjunto de dados o objetivo será o desenvolvimento de um classificador multi-classe.
 Além da notável diferença na natureza dos conjuntos de dados, a escolha dos conjuntos se dá também pela diferença de diversidade das amostras, permitindo avaliar os modelos de geração e classificação em conjuntos de menor e maior nível de variação entre as instâncias.
 
 \section{Contribuições}
